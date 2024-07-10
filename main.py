@@ -35,10 +35,12 @@ low_sorted_movies= sorted(low_movie_counts.items(), key=lambda x: x[1], reverse=
 
 
 with open('movie_counts.txt', 'w') as file:
+    file.write('high ratings')
+
     for movie, count in sorted_movies[:10]:
-        file.write('high ratings')
         file.write(f'{movie} : {count}\n')
+    file.write('low ratings')
+
     for movie, count in low_sorted_movies[:10]:
-        file.write('low ratings')
         file.write(f'{movie} : {count}\n')
         print(f'{movie} : {count}')
